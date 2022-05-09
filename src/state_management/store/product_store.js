@@ -47,14 +47,14 @@ class ProductStore {
 
     this.loading = false;
     if (resp.status === 200) {
-      this.listProducts = resp.body;
-      console.log(resp.body);
+      this.listProducts = resp.body?.data;
+      console.log(resp.body?.data);
     } else {
       console.log("went wroing", resp.status);
     }
     console.log("this response 2", response2.status, response2.body);
     if (response2.status === 200) {
-      this.listProducts.push(response2.body);
+      this.listProducts.push(response2.body?.data);
     } else {
       console.log("went wroing", resp.status);
     }
